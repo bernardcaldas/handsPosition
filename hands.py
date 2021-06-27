@@ -1,5 +1,6 @@
 import cv2
 import mediapipe as mp
+import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
@@ -41,6 +42,8 @@ with mp_hands.Hands(
 
         cv2.putText(image,label,(x1,y1 - 10), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
         print(x1,y1)
+
+        
         mp_drawing.draw_landmarks(
             image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
             
